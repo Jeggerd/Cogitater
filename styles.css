@@ -1,0 +1,58 @@
+:root {
+    --dark-scheme: #1d1d1d;
+    --light-scheme: #f7f9fb
+}
+
+@media (prefers-color-scheme:light) {
+    body {
+        color: var(--dark-scheme);
+        background-color: var(--light-scheme);
+    }
+}
+
+@media (prefers-color-scheme:dark) {
+    body {
+        color: var(--light-scheme);
+        background-color: var(--dark-scheme);
+    }
+}
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+#header-splash {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+
+#gradient {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(135deg, rgb(155, 140, 235) 0%, rgb(209, 192, 250) 100%);
+}
+
+#logo-silhouette {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("./assets/logo_mask.png");
+    background-position:45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
