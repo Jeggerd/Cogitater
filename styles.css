@@ -9,6 +9,10 @@
         color: var(--dark-scheme);
         background-color: var(--light-scheme);
     }
+    html {
+        color: var(--dark-scheme);
+        background-color: var(--light-scheme);
+    }
     .borderless-btn:hover {
         background-color: var(--dark-scheme);
         color: var(--light-scheme);
@@ -28,6 +32,10 @@
 }
 @media (prefers-color-scheme:dark) {
     a { color: var(--light-scheme); }
+    html {
+        color: var(--light-scheme);
+        background-color: var(--dark-scheme);
+    }
     body {
         color: var(--light-scheme);
         background-color: var(--dark-scheme);
@@ -213,6 +221,9 @@
 
 /*  mobile starts here  */
 @media (max-width: 590px) {
+    a {
+        text-decoration:underline !important;
+    }
     h1 {
         font-size: 42px;
     }
@@ -234,6 +245,9 @@
         justify-content: center !important;
         max-width: 500px;
         margin: 0 auto;
+    }
+    .button-cluster a {
+        text-decoration:none !important;
     }
     #logo-contain {
         /* margin: 0 auto; */
@@ -421,7 +435,7 @@ i {
     /* color: var(--burple); */
 }
 a {
-    text-decoration:none !important;
+    text-decoration:none;
 }
 
 .unselectable {
