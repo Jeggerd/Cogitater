@@ -1,6 +1,8 @@
 :root {
     --dark-scheme: #1f1f1f;
     --light-scheme: #f0f3f6;
+    --dark-grad: linear-gradient(to top, #1f1f1f,  #1f1f1fc9, #1f1f1f00 );
+    --light-grad: linear-gradient(to top, #f0f3f6, #f0f3f600);
 }
 
 @media (prefers-color-scheme:light) {
@@ -9,52 +11,40 @@
         color: var(--dark-scheme);
         background-color: var(--light-scheme);
     }
-    html {
-        color: var(--dark-scheme);
-        background-color: var(--light-scheme);
-    }
-    .borderless-btn:hover {
-        background-color: var(--dark-scheme);
-        color: var(--light-scheme);
-    }
     .sep {
         border-color: var(--dark-scheme);
     }
     .button-cluster p { border: 1pt solid var(--dark-scheme);}
-    .button-cluster p:hover {
+    .borderless-btn:hover,
+    .button-cluster p:hover,
+    .social-box h3:hover,
+    .tooltip .tooltiptext {
         background-color: var(--dark-scheme);
         color: var(--light-scheme);
     }
-    .social-box h3:hover {
-        background-color: var(--dark-scheme);
-        color: var(--light-scheme);
+    #scroll-indic {
+        background-image: var(--light-grad);
     }
 }
 @media (prefers-color-scheme:dark) {
     a { color: var(--light-scheme); }
-    html {
-        color: var(--light-scheme);
-        background-color: var(--dark-scheme);
-    }
     body {
         color: var(--light-scheme);
         background-color: var(--dark-scheme);
-    }
-    .borderless-btn:hover {
-        background-color: var(--light-scheme);
-        color: var(--dark-scheme);
     }
     .sep {
         border-color: var(--light-scheme);
     }
     .button-cluster p { border: 1pt solid var(--light-scheme);}
-    .button-cluster p:hover {
+    .borderless-btn:hover,
+    .button-cluster p:hover,
+    .social-box h3:hover,
+    .tooltip .tooltiptext {
         background-color: var(--light-scheme);
         color: var(--dark-scheme);
     }
-    .social-box h3:hover {
-        background-color: var(--light-scheme);
-        color: var(--dark-scheme);
+    #scroll-indic {
+        background-image: var(--dark-grad);
     }
 }
 
@@ -77,6 +67,9 @@
 }
 
 @media (min-width: 960px) {
+    .tooltiptext {
+        top: 120%;
+    }
     h1 {
         font-size: 76px;
     }
@@ -190,16 +183,16 @@
         width: 120px;
         height: 70px;
     }
-    .button-cluster {
+    /* .button-cluster {
         display: block !important;
-        max-width: 230px;
-    }
-    .button-left {
+        max-width: 190px;
+    } */
+    /* .button-left {
         border-radius: 10px !important;
     }
     .button-right {
         border-radius: 10px !important;
-    }
+    } */
     #main-container {
         display: flex;
     }
@@ -221,6 +214,21 @@
 
 /*  mobile starts here  */
 @media (max-width: 590px) {
+    .tooltiptext {
+        bottom: 120%;
+    }
+    #scroll-indic {
+        visibility: visible !important;
+    }
+    .borderless-btn:hover,
+    .button-cluster p:hover,
+    .social-box h3:hover {
+        background-color: transparent !important;
+        color:inherit !important;
+        /* color: var(--light-scheme); */
+    }
+
+    
     a {
         text-decoration:underline !important;
     }
@@ -245,6 +253,7 @@
         justify-content: center !important;
         max-width: 500px;
         margin: 0 auto;
+        padding:10px;
     }
     .button-cluster a {
         text-decoration:none !important;
@@ -253,15 +262,16 @@
         /* margin: 0 auto; */
         justify-content: center !important;
         align-items: center !important;
+        padding: 35px 0 30px 0;
 
         /* width: 100%; */
     }
-    .button-left {
+    /* .button-left {
         border-radius: 10px !important;
     }
     .button-right {
         border-radius: 10px !important;
-    }
+    } */
     #main-container {
         display: block;
         text-align: center;
@@ -276,12 +286,12 @@
         height: 1pt;
         width: 100%;
         border-radius: 20px;
-        margin: 14px 0 14px 0;
+        margin: 22px 0 22px 0;
 
         border-top: 1pt solid;
     }
     .social-box h3 {
-        padding: 8px 6px 8px 6px;
+        padding: 10px 6px 10px 6px;
         margin: 4px 0px 4px 0 !important;
     }
     .social-box {
@@ -297,7 +307,7 @@
         align-items: top !important;
         height: 100% !important;
     }
-    @media (min-height: 890px) {
+    @media (min-height: 1000px) {
         .heading-container {
             display: flex !important;
             align-items: center;
@@ -351,14 +361,6 @@
         padding: 10px !important;
         margin: 0 auto;
     }
-    .sep {
-        height: 1pt;
-        width: 100%;
-        border-radius: 20px;
-        margin: 14px 0 14px 0;
-
-        border-top: 1pt solid;
-    }
     .social-box {
         min-width: 150px;
         display: flex !important;
@@ -402,6 +404,46 @@
 .button-right {
     border-radius: 4px 10px 10px 4px;
 }
+
+#scroll-indic {
+    visibility: hidden;
+    display:flex;
+    justify-content: center;
+    /* align-items:flex-end; */
+    text-align: center;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    padding: 80px 0 10px 0;
+    /* padding: 10px; */
+    z-index: 200;
+    
+    transition: opacity 0.25s ease-in-out;
+}
+
+#scroll-indic i {
+    font-size: 20px;
+}
+
+#scroll-indic p {
+    margin: 0;
+    /* font-size: 14px; */
+}
+
+
+/* #contact-us {
+    justify-content: center;
+    max-width: 50px;
+} */
+#contact-us a {
+    text-decoration: underline !important;
+    transition: all .2s ease-in-out;
+}
+/* #contact-us a:active {
+    text-decoration: none !important;
+} */
 
 
 html {
@@ -509,7 +551,7 @@ Heading styles
 
 #header-icon {
     position: relative;
-    margin-right: 10px;
+    margin-right: 18px;
 
     background-image: url("./assets/marketing/single-small.png");
     background-position: center;
@@ -548,3 +590,40 @@ Navbar styling
     transition: all .3s;
     transition-timing-function: ease-out;
 }
+
+
+
+
+/* #contact-popup {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+} */
+
+.tooltip {
+    position: relative;
+    /* display: inline-block;
+    border-bottom: 1px dotted black; */
+  }
+  
+  .tooltip .tooltiptext {
+    opacity: 0;
+    width: 120px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+
+    left: 50%;
+    margin-left: -60px;
+
+    transition: all 0.25s ease-in-out;
+  }
+  
+  /* .tooltip:hover .tooltiptext {
+    opacity: 1;
+  } */
