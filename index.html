@@ -31,8 +31,49 @@
         <link rel="stylesheet" href="./styles.css" />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+        <script>
+            function copy(id) {
+            var r = document.createRange();
+            r.selectNode(document.getElementById(id));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(r);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            var emailt =  document.querySelector('.tooltiptext')
+            emailt.style.opacity = 1;
+            // emailt.textContent = "Copied!"
+            setTimeout(function(){
+                emailt.style.opacity = 0;
+                // setTimeout(function(){
+                // emailt.textContent = "Copy Email";
+                // }, 250);
+                
+                    }, 1250);
+
+            }
+
+            function check() {
+                var elem = document.querySelector('#last-social');
+                var bounding = elem.getBoundingClientRect();
+
+                if (!(bounding.bottom > (window.innerHeight || document.documentElement.clientHeight))) {
+                    document.querySelector('#scroll-indic').style.opacity =0;
+                } else {
+                    setTimeout(function(){
+                        document.querySelector('#scroll-indic').style.opacity = 1;
+                    }, 250);
+                }
+            }
+        </script>
     </head>
-    <body>
+    <body onscroll="check(); return false;">
+        <div id="scroll-indic">
+            <div style="display: block;">
+            <p>More Below</p>
+            <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
         <div id="header">
             <div class="heading-container">
                 <div id="main-container">
@@ -57,22 +98,29 @@
                             <a href="#">
                                 <p class="unselectable button-left">
                                     <i class="fa-solid fa-shirt"></i>
-                                    Merchandise and eBook
+                                    Merchandise Store
                                 </p>
                             </a>
                             <a href="#">
                                 <p class="unselectable button-right">
-                                    <i class="fa-solid fa-comment"></i>
-                                    Consultation / Contact</p>
+                                    <i class="fa-solid fa-coffee"></i>
+                                    Buy Me a Coffee</p>
                                 </a>
                         </span>
-                        <a href="#">
-                            <p class="unselectable borderless-btn">
-                                <i class="fa-solid fa-coffee"></i>
-                                Buy Me a Coffee
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </p>
-                        </a>
+
+                        <!-- <div style="width: 100%;"> -->
+                        <p id="contact-us">
+                            
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact Us at
+                            <a href="" id="email" class="tooltip" onclick="copy('email'); return false;">
+                                contact.cogitater@gmail.com
+                                <span class="tooltiptext">Copied</span>
+                            </a>
+                            for Inquiries and Consultations
+                        </p>
+                    <!-- </div> -->
+
                     </div>
                     <div class="sep"></div>
 
@@ -127,7 +175,7 @@
                         </a>
 
                         <a href="#">
-                            <h3>
+                            <h3 id="last-social">
                                 <i class="fa-brands fa-tiktok"></i>
                                 TikTok
                             </h3>
