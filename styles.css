@@ -1,8 +1,8 @@
 :root {
     --dark-scheme: #1f1f1f;
     --light-scheme: #f0f3f6;
-    --dark-grad: linear-gradient(to top, #1f1f1f,  #1f1f1fc9, #1f1f1f00 );
-    --light-grad: linear-gradient(to top, #f0f3f6, #f0f3f600);
+    --dark-grad: linear-gradient(to top, #1f1f1f,  #1f1f1fcd, #1f1f1f00 );
+    --light-grad: linear-gradient(to top, #f0f3f6, #f0f3f6cd, #f0f3f600);
 }
 
 @media (prefers-color-scheme:light) {
@@ -430,6 +430,25 @@
 #scroll-indic p {
     margin: 0;
     /* font-size: 14px; */
+}
+
+#scroll-indic div {
+    animation-name: float;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+    }
 }
 
 
