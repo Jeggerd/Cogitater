@@ -57,15 +57,30 @@ window.onload = function generateStars(){
     }
 }
 
-window.onscroll = function check() {
-    var elem = document.querySelector('#last-social');
-    var bounding = elem.getBoundingClientRect();
 
-    if ((bounding.bottom < (window.innerHeight || document.documentElement.clientHeight))) {
-        document.querySelector('#scroll-indic').style.opacity =0;
+function elementsOverlap(el1, el2) {
+    const domRect1 = el1.getBoundingClientRect();
+    const domRect2 = el2.getBoundingClientRect();
+  
+    return !(
+      domRect1.top > domRect2.bottom ||
+      domRect1.right < domRect2.left ||
+      domRect1.bottom < domRect2.top ||
+      domRect1.left > domRect2.right
+    );
+  }
+
+  window.onscroll = function() {
+    const el1 = document.getElementById('scroll-indic');
+    const el2 = document.getElementById('last-social');
+
+    if (elementsOverlap(el1, el2)) {
+        el1.style.opacity = 0;
+        console.log("should hide indic")
     } else {
-        setTimeout(function(){
-            document.querySelector('#scroll-indic').style.opacity = 1;
-        }, 250);
+        // setTimeout(function(){
+            el1.style.opacity = 1;
+        // }, 250);
     }
-}
+  }
+  
