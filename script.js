@@ -8,8 +8,9 @@ function copy(id) {
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
 
+    e.textContent = "Copied!"
     e.style.opacity = 1;
-    setTimeout(function(){e.style.opacity = 0;}, 1250);
+    setTimeout(function(){e.style.opacity = 0; setTimeout(function(){e.textContent = ""}, 250)}, 1250);
 }
 
 window.onload = function generateStars(){
@@ -51,7 +52,6 @@ window.onload = function generateStars(){
         aura.style.width   = size + 18 + "px"
         aura.style.height  = size + 18 + "px"
         aura.style.margin  = -10 + "px"
-
 
         document.querySelector("#back").appendChild(aura)
     }
