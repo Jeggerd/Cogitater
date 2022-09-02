@@ -28,47 +28,14 @@
 	    <link rel="icon" type="image/png" href="./assets/favicons/favicon_16x16.png" sizes="16x16">
         <link rel="icon" type="image/png" href="./assets/favicons/favicon_96x96.png" sizes="96x96">
 
+        <script src="./script.js"></script>
         <link rel="stylesheet" href="./styles.css" />
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:100,400,600' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-        <script>
-            function copy(id) {
-            var r = document.createRange();
-            r.selectNode(document.getElementById(id));
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(r);
-            document.execCommand('copy');
-            window.getSelection().removeAllRanges();
-            var emailt =  document.querySelector('.tooltiptext')
-            emailt.style.opacity = 1;
-            // emailt.textContent = "Copied!"
-            setTimeout(function(){
-                emailt.style.opacity = 0;
-                // setTimeout(function(){
-                // emailt.textContent = "Copy Email";
-                // }, 250);
-                
-                    }, 1250);
-
-            }
-
-            function check() {
-                var elem = document.querySelector('#last-social');
-                var bounding = elem.getBoundingClientRect();
-
-                if (!(bounding.bottom > (window.innerHeight || document.documentElement.clientHeight))) {
-                    document.querySelector('#scroll-indic').style.opacity =0;
-                } else {
-                    setTimeout(function(){
-                        document.querySelector('#scroll-indic').style.opacity = 1;
-                    }, 250);
-                }
-            }
-        </script>
     </head>
-    <body onscroll="check(); return false;">
-        <div id="scroll-indic">
+    <body>
+        <div id="back"  class="unselectable"></div>
+        <div id="scroll-indic" class="unselectable">
             <div style="display: block;">
             <p>More Below</p>
             <i class="fa-solid fa-chevron-down"></i>
@@ -76,118 +43,99 @@
         </div>
         <div id="header">
             <div class="heading-container">
-                <div id="main-container">
-                    <div style="display: block;">
-
-                        <div id="logo-contain" style="display: flex;">
+                <div>
+                    <div id="main">
+                        <div id="logo-contain">
                             <div id="header-icon"></div>
                             <h1 class="unselectable" style="cursor:default;">
-                                Cogitater
+                                Cogitater<br><span>Deep Thinkly</span>
                             </h1>
                         </div>
-
-                        <h3 style="max-width:650px;">
+                        <h3 style="max-width:670px;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
-
-                            <br><br>
-
-                            ...Deep Thinkly.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Hoohiyuh poopiyuh goohall.
                         </h3>
                         <span class="button-cluster">
                             <a href="#">
-                                <p class="unselectable button-left">
+                                <p class="unselectable">
                                     <i class="fa-solid fa-shirt"></i>
                                     Merchandise Store
                                 </p>
                             </a>
                             <a href="#">
-                                <p class="unselectable button-right">
+                                <p class="unselectable">
                                     <i class="fa-solid fa-coffee"></i>
-                                    Buy Me a Coffee</p>
-                                </a>
+                                    Buy Me a Coffee
+                                </p>
+                            </a>
                         </span>
-
-                        <!-- <div style="width: 100%;"> -->
                         <p id="contact-us">
-                            
                             <i class="fa-solid fa-envelope"></i>
-                            Contact Us at
-                            <a href="" id="email" class="tooltip" onclick="copy('email'); return false;">
+                            Connect With Us at
+                            <a id="email" class="tooltip" onclick="copy('email'); return false;">
                                 contact.cogitater@gmail.com
-                                <span class="tooltiptext">Copied</span>
+                                <span class="tooltiptext">Copied!</span>
                             </a>
                             for Inquiries and Consultations
                         </p>
-                    <!-- </div> -->
-
                     </div>
-                    <div class="sep"></div>
-
                     <div class="social-box">
-                        <div style="display: block;">
-                        <p class="sub unselectable">VIDEO CONTENT</p>
-
                         <a href="#">
-                            <h3>
-                                <i class="fa-brands fa-youtube"></i>
-                                Youtube
-                            </h3>
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-brands fa-youtube fa-stack-1x"></i>
+                            </span>
+                            <p>Youtube</p>
                         </a>
-
-                        <p class="sub unselectable">LIVE GAMING & COGITATION</p>
-
                         <a href="#">
-                            <h3>
-                                <i class="fa-brands fa-twitch"></i>
-                                Twitch
-                            </h3>
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-brands fa-twitch fa-stack-1x"></i>
+                            </span>
+                            <p>Twitch</p>
                         </a>
-
-                        <p class="sub unselectable">SOCIAL COGITATION</p>
-
                         <a href="#">
-                            <h3>
-                                <i class="fa-brands fa-discord"></i>
-                                Discord
-                            </h3>
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-brands fa-discord fa-stack-1x"></i>
+                            </span>
+                            <p>Discord</p>
                         </a>
-
                         <a href="#">
-                            <h3>
-                                <i class="fa-brands fa-instagram"></i>
-                                Instagram
-                            </h3>
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-brands fa-instagram fa-stack-1x"></i>
+                            </span>
+                            <p>Instagram</p>
                         </a>
-
                         <a href="#">
-                            <h3>
-                                <i class="fa-brands fa-twitter"></i>
-                                Twitter
-                            </h3>
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-brands fa-twitter fa-stack-1x"></i>
+                            </span>
+                            <p>Twitter</p>
                         </a>
-
                         <a href="#">
-                            <h3>
-                                <i class="fa-solid fa-heart"></i>
-                                Likee
-                            </h3>
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-heart fa-stack-1x"></i>
+                            </span>
+                            <p>Likee</p>
                         </a>
-
                         <a href="#">
-                            <h3 id="last-social">
-                                <i class="fa-brands fa-tiktok"></i>
-                                TikTok
-                            </h3>
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-brands fa-tiktok fa-stack-1x"></i>
+                            </span>
+                            <p>TikTok</p>
                         </a>
-
                         <a href="#">
-                            <h3>
-                                <i class="fa-brands fa-pinterest"></i>
-                                Pinterest
-                            </h3>
+                            <span  id="last-social" class="fa-stack fa-2x">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-brands fa-pinterest fa-stack-1x"></i>
+                            </span>
+                            <p >Pinterest</p>
                         </a>
-                    </div>
                 </div>
             </div>
         </div>
