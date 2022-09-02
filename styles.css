@@ -114,9 +114,17 @@
     .social-box {
         padding-bottom: 20px !important;
     }
+    .heading-container {
+        width: 80%;
+        margin: 10%;
+    }
 }
 
 @media (min-width: 710px) {
+    .heading-container {
+        width: 80%;
+        margin: 10%;
+    }
     h1 span {
         font-size: 36px;
     }
@@ -131,6 +139,10 @@
     }
 }
 @media (max-width: 710px) {
+    .heading-container {
+        width: 80%;
+        margin: 10%;
+    }
     h1 {
         font-size: 64px;
     }
@@ -165,6 +177,9 @@
     h1 span {
         font-size: 28px;
     }
+    .button-cluster {
+        font-size: 14px !important;
+    }
 }
 @media (max-width: 495px) {
     .fa-coffee {
@@ -172,6 +187,21 @@
     }
     .fa-shirt {
         display: none !important;
+    }
+    .heading-container {
+        width: 86%;
+        margin: 6%;
+    }
+}
+@media (max-width: 435px) {
+    .fa-coffee {
+        display: initial !important;
+    }
+    .fa-shirt {
+        display: initial !important;
+    }
+    .button-cluster {
+        display: block !important;
     }
 }
 
@@ -312,10 +342,6 @@ a {
     display: flex;
     justify-content: center;
     text-align: center;
-
-    width: 80%;
-    /* height: 91%; */
-    margin: 10%;
 }
 #header-icon {
     display: flex;
