@@ -72,11 +72,11 @@ function elementsOverlap(el1, el2) {
 
   window.onscroll = function() {
     const el1 = document.getElementById('scroll-indic');
-    const el2 = document.getElementById('last-social');
+    const el2 = document.getElementById('bottom-of-page');
 
     if (elementsOverlap(el1, el2)) {
         el1.style.opacity = 0;
-        console.log("should hide indic")
+        console.log("at bottom, should hide indic")
     } else {
         // setTimeout(function(){
             el1.style.opacity = 1;
