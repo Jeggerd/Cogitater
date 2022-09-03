@@ -97,7 +97,8 @@ window.onscroll = function() {
 
     var height = null
     if (/android/i.test(navigator.userAgent) || navigator.platform.indexOf("Android")!=-1) {
-        height = screen.height
+        height = Math.round(document.querySelector("#bottom-of-page").getBoundingClientRect().bottom)
+        inner
         document.querySelector(".diagdiv").innerHTML = "andrd  "
     } else {
         height = window.innerHeight
