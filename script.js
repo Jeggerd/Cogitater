@@ -1,4 +1,4 @@
-var height = null
+
 
 function copy(id) {
     var r = document.createRange();
@@ -16,8 +16,6 @@ function copy(id) {
 }
 
 window.onload = function generateStars(){
-    height = window.innerHeight
-    console.log(height)
     for (let i = 180; i--;) {
         let div = document.createElement("div");
         let aura = document.createElement("div");
@@ -97,6 +95,14 @@ window.onload = function generateStars(){
 
 window.onscroll = function() {
 
+    var height = null
+    if (/android/i.test(navigator.userAgent) || navigator.platform.indexOf("Android")!=-1) {
+        height = screen.height
+        document.querySelector(".diagdiv").innerHTML = "andrd  "
+    } else {
+        height = window.innerHeight
+        document.querySelector(".diagdiv").innerHTML = "na  "
+    }
   let rect = document.querySelector(".social-box").getBoundingClientRect();
 
   if ((rect.bottom - height) <= 0) {
@@ -108,5 +114,5 @@ window.onscroll = function() {
         }, 250);
     }
 
-    document.querySelector(".diagdiv").innerHTML = "inner="+window.innerHeight+"; outer="+window.outerHeight+"; G="+height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
+    document.querySelector(".diagdiv").innerHTML += "inner="+window.innerHeight+"; outer="+window.outerHeight+"; G="+height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
   }
