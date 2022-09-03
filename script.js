@@ -59,6 +59,12 @@ window.onload = function generateStars(){
 
         document.querySelector("#back").appendChild(aura)
     }
+
+    let div = document.createElement("div");
+    div.className = "diagdiv"
+    div.style.color = "red"
+    div.style.position = "fixed"
+    document.body.appendChild(div)
 }
 
 
@@ -88,13 +94,7 @@ window.onload = function generateStars(){
 //     }
 //   }
   
-window.onload = function() {
-    let div = document.createElement("div");
-    div.className = "diagdiv"
-    div.style.color = "red"
-    div.style.position = "fixed"
-    document.body.appendChild(div)
-}
+
 window.onscroll = function() {
 
   let rect = document.querySelector(".social-box").getBoundingClientRect();
