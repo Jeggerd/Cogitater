@@ -16,7 +16,8 @@ function copy(id) {
 }
 
 window.onload = function generateStars(){
-    height = document.body.clientHeight
+height = Math.max(document.body.clientHeight, window.innerHeight)// document.body.clientHeight
+
     console.log(height)
     for (let i = 180; i--;) {
         let div = document.createElement("div");
