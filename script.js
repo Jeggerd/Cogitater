@@ -69,18 +69,13 @@ window.onload = function generateStars(){
 function elementsOverlap(el1, el2) {
     const domRect1 = el1.getBoundingClientRect();
     const domRect2 = el2.getBoundingClientRect();
-
-    console.log("1 "+Math.round(domRect1.bottom))
-    console.log("2 "+Math.round(domRect2.bottom))
-
-    return Math.round(domRect1.bottom+10) >= Math.round(domRect2.bottom)
   
-    // return !(
-    //   domRect1.top > domRect2.bottom ||
-    //   domRect1.right < domRect2.left ||
-    //   domRect1.bottom < domRect2.top ||
-    //   domRect1.left > domRect2.right
-    // );
+    return !(
+      domRect1.top > domRect2.bottom ||
+      domRect1.right < domRect2.left ||
+      domRect1.bottom < domRect2.top ||
+      domRect1.left > domRect2.right
+    );
   }
 
   window.onscroll = function() {
@@ -88,12 +83,11 @@ function elementsOverlap(el1, el2) {
     const el2 = document.getElementById('bottom-of-page');
 
     if (elementsOverlap(el1, el2)) {
-        el1.style.color = "red";
+        el1.style.opacity = 0;
         console.log("at bottom, should hide indic")
     } else {
-        el1.style.color = "blue";
         // setTimeout(function(){
-           // el1.style.opacity = 1;
+            el1.style.opacity = 1;
         // }, 250);
     }
   }
