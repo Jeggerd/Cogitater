@@ -58,62 +58,67 @@ window.onload = function generateStars(){
         document.querySelector("#back").appendChild(aura)
     }
 
-    let div = document.createElement("div");
-    div.className = "diagdiv"
-    div.style.color = "red"
-    div.style.position = "fixed"
-    document.body.appendChild(div)
+    // let div = document.createElement("div");
+    // div.className = "diagdiv"
+    // div.style.color = "red"
+    // div.style.position = "fixed"
+    // document.body.appendChild(div)
 }
 
 
-// function elementsOverlap(el1, el2) {
-//     const domRect1 = el1.getBoundingClientRect();
-//     const domRect2 = el2.getBoundingClientRect();
+function elementsOverlap(el1, el2) {
+    const domRect1 = el1.getBoundingClientRect();
+    const domRect2 = el2.getBoundingClientRect();
+
+    console.log("1 "+Math.round(domRect1.bottom))
+    console.log("2 "+Math.round(domRect2.bottom))
+
+    return Math.round(domRect1.bottom+10) >= Math.round(domRect2.bottom)
   
-//     return !(
-//       domRect1.top > domRect2.bottom ||
-//       domRect1.right < domRect2.left ||
-//       domRect1.bottom < domRect2.top ||
-//       domRect1.left > domRect2.right
-//     );
-//   }
-
-//   window.onscroll = function() {
-//     const el1 = document.getElementById('scroll-indic');
-//     const el2 = document.getElementById('bottom-of-page');
-
-//     if (elementsOverlap(el1, el2)) {
-//         el1.style.opacity = 0;
-//         console.log("at bottom, should hide indic")
-//     } else {
-//         // setTimeout(function(){
-//             el1.style.opacity = 1;
-//         // }, 250);
-//     }
-//   }
-  
-
-window.onscroll = function() {
-
-    var height = null
-    if (/android/i.test(navigator.userAgent) || navigator.platform.indexOf("Android")!=-1) {
-        height = Math.round(document.querySelector("#bottom-of-page").getBoundingClientRect().bottom)
-
-        document.querySelector(".diagdiv").innerHTML = "andrd  "
-    } else {
-        height = window.innerHeight
-        document.querySelector(".diagdiv").innerHTML = "na  "
-    }
-  let rect = document.querySelector(".social-box").getBoundingClientRect();
-
-  if ((rect.bottom - height) <= 0) {
-    document.querySelector("#scroll-indic").style.opacity = 0;
-    // console.log("At the bottom")
-  } else {
-        setTimeout(function(){
-            document.querySelector("#scroll-indic").style.opacity = 1;
-        }, 250);
-    }
-
-    document.querySelector(".diagdiv").innerHTML += "inner="+window.innerHeight+"; outer="+window.outerHeight+"; G="+height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
+    // return !(
+    //   domRect1.top > domRect2.bottom ||
+    //   domRect1.right < domRect2.left ||
+    //   domRect1.bottom < domRect2.top ||
+    //   domRect1.left > domRect2.right
+    // );
   }
+
+  window.onscroll = function() {
+    const el1 = document.getElementById('scroll-indic');
+    const el2 = document.getElementById('bottom-of-page');
+
+    if (elementsOverlap(el1, el2)) {
+        el1.style.color = "red";
+        console.log("at bottom, should hide indic")
+    } else {
+        el1.style.color = "blue";
+        // setTimeout(function(){
+           // el1.style.opacity = 1;
+        // }, 250);
+    }
+  }
+  
+
+// window.onscroll = function() {
+
+//     var height = null
+//     if (!/android/i.test(navigator.userAgent) || navigator.platform.indexOf("Android")!=-1) {
+//         height = Math.round(document.querySelector("#bottom-of-page").getBoundingClientRect().bottom)
+//         document.querySelector(".diagdiv").innerHTML = "andrd  "
+//     } else {
+//         height = window.innerHeight
+//         document.querySelector(".diagdiv").innerHTML = "na  "
+//     }
+//   let rect = document.querySelector(".social-box").getBoundingClientRect();
+
+//   if ((rect.bottom - height) <= 0) {
+//     document.querySelector("#scroll-indic").style.opacity = 0;
+//     // console.log("At the bottom")
+//   } else {
+//         setTimeout(function(){
+//             document.querySelector("#scroll-indic").style.opacity = 1;
+//         }, 250);
+//     }
+
+//     document.querySelector(".diagdiv").innerHTML += "inner="+window.innerHeight+"; outer="+window.outerHeight+"; G="+height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
+//   }
