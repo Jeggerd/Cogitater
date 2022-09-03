@@ -84,7 +84,13 @@ window.onload = function generateStars(){
 //     }
 //   }
   
-
+window.onload = function() {
+    let div = document.createElement("div");
+    div.className = "diagdiv"
+    div.style.color = "red"
+    div.style.position = "fixed"
+    document.body.appendChild(div)
+}
 window.onscroll = function() {
 
   let rect = document.querySelector(".social-box").getBoundingClientRect();
@@ -96,4 +102,6 @@ window.onscroll = function() {
             document.querySelector("#scroll-indic").style.opacity = 1;
         }, 250);
     }
+
+    document.querySelector(".diagdiv").innerHTML = "inner="+window.innerHeight+"; outer="+window.outerHeight+"; cli="+window.scrollbars.height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
   }
