@@ -1,3 +1,5 @@
+var height = null
+
 function copy(id) {
     var r = document.createRange();
     var e = document.querySelector('.tooltiptext')
@@ -14,6 +16,8 @@ function copy(id) {
 }
 
 window.onload = function generateStars(){
+    height = document.body.clientHeight
+    console.log(height)
     for (let i = 180; i--;) {
         let div = document.createElement("div");
         let aura = document.createElement("div");
@@ -84,24 +88,25 @@ window.onload = function generateStars(){
 //     }
 //   }
   
-window.onload = function() {
-    let div = document.createElement("div");
-    div.className = "diagdiv"
-    div.style.color = "red"
-    div.style.position = "fixed"
-    document.body.appendChild(div)
-}
+// window.onload = function() {
+//     let div = document.createElement("div");
+//     div.className = "diagdiv"
+//     div.style.color = "red"
+//     div.style.position = "fixed"
+//     document.body.appendChild(div)
+// }
 window.onscroll = function() {
 
   let rect = document.querySelector(".social-box").getBoundingClientRect();
-  if ((rect.bottom - window.innerHeight) <= 0) {
+
+  if ((rect.bottom - height) <= 0) {
     document.querySelector("#scroll-indic").style.opacity = 0;
-    console.log("At the bottom")
+    // console.log("At the bottom")
   } else {
         setTimeout(function(){
             document.querySelector("#scroll-indic").style.opacity = 1;
         }, 250);
     }
 
-    document.querySelector(".diagdiv").innerHTML = "inner="+window.innerHeight+"; outer="+window.outerHeight+"; cli="+window.scrollbars.height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
+    // document.querySelector(".diagdiv").innerHTML = "inner="+window.innerHeight+"; outer="+window.outerHeight+"; cli="+window.scrollbars.height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
   }
