@@ -16,8 +16,7 @@ function copy(id) {
 }
 
 window.onload = function generateStars(){
-height = Math.max(document.body.clientHeight, window.innerHeight)// document.body.clientHeight
-
+    height = window.innerWidth
     console.log(height)
     for (let i = 180; i--;) {
         let div = document.createElement("div");
@@ -89,13 +88,13 @@ height = Math.max(document.body.clientHeight, window.innerHeight)// document.bod
 //     }
 //   }
   
-// window.onload = function() {
-//     let div = document.createElement("div");
-//     div.className = "diagdiv"
-//     div.style.color = "red"
-//     div.style.position = "fixed"
-//     document.body.appendChild(div)
-// }
+window.onload = function() {
+    let div = document.createElement("div");
+    div.className = "diagdiv"
+    div.style.color = "red"
+    div.style.position = "fixed"
+    document.body.appendChild(div)
+}
 window.onscroll = function() {
 
   let rect = document.querySelector(".social-box").getBoundingClientRect();
@@ -109,5 +108,5 @@ window.onscroll = function() {
         }, 250);
     }
 
-    // document.querySelector(".diagdiv").innerHTML = "inner="+window.innerHeight+"; outer="+window.outerHeight+"; cli="+window.scrollbars.height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
+    document.querySelector(".diagdiv").innerHTML = "inner="+window.innerHeight+"; outer="+window.outerHeight+"; G="+height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
   }
