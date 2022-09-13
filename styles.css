@@ -5,17 +5,30 @@
     --light-grad: linear-gradient(to top, #f0f3f6, #f0f3f6cd, #f0f3f600);
 }
 
+#credit {
+    text-align: center;
+    font-size: 11px;
+    height: fit-content;
+    opacity: 0.7;
+    width: 100%;
+}
+#credit a{
+    text-decoration: underline;
+}
 
 #back {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh);
     position: fixed;
+
 }
+
 .star {
     position: absolute;
     border-radius: 2rem;
     /* border: 4px solid; */
 }
+
 @media (pointer:coarse) {
     @media (prefers-color-scheme:dark) {
     .button-cluster p:hover {
@@ -34,7 +47,7 @@
 
 @media (prefers-color-scheme:light) {
     #back {
-        opacity: 0.55;
+        opacity: 0.6;
     }
     .aura {
         opacity: 0.025
@@ -71,10 +84,10 @@
 }
 @media (prefers-color-scheme:dark) {
     #back {
-        opacity: 0.6;
+        opacity: 0.7;
     }
     .aura {
-        opacity: 0.014
+        opacity: 0.015
     }
     :root {
         --star-color-p: #f1bfd3; 
@@ -126,9 +139,9 @@
         align-items: top;
         height: 100%;
     }
-    .social-box {
+    /* .social-box {
         padding-bottom: 20px !important;
-    }
+    } */
     .heading-container {
         width: 80%;
         margin: 10%;
@@ -245,7 +258,7 @@
 
 
 html {
-    height: 100%;
+    /* height: 100%; */
     overflow-x: hidden;
 }
 body {
@@ -255,7 +268,7 @@ body {
     margin: 0;
     padding: 0;
 
-    height: 100%;
+    /* height: 100%; */
     overflow-x: hidden;
 }
 h1 {
