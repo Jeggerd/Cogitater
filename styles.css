@@ -4,6 +4,26 @@
     --dark-grad: linear-gradient(to top, #141414,  #141414cd, #14141400 );
     --light-grad: linear-gradient(to top, #f0f3f6, #f0f3f6cd, #f0f3f600);
 }
+#contact-container {
+    position: relative;
+    display: grid;
+    place-items: center;
+    grid-template-areas: "inner-div";
+}
+
+#contact-container p {
+    grid-area: inner-div;
+    width: 100%;
+    transition: all 0.8s;
+}
+
+#contact-us {
+    opacity: 1;
+}
+#copy-success {
+    opacity: 0;
+    pointer-events: none;
+}
 
 #credit {
     text-align: center;
@@ -12,7 +32,7 @@
     opacity: 0.7;
     width: 100%;
 }
-#credit a{
+#credit a {
     text-decoration: underline;
 }
 
@@ -25,7 +45,8 @@
 
 .star {
     position: absolute;
-    border-radius: 2rem;
+    transform: rotate(45deg);
+    /* border-radius: 2rem; */
     /* border: 4px solid; */
 }
 
@@ -78,9 +99,9 @@
         background-color: var(--light-scheme);
         color: var(--dark-scheme);
     }
-    #scroll-indic {
+    /* #scroll-indic {
         background-image: var(--light-grad);
-    }
+    } */
 }
 @media (prefers-color-scheme:dark) {
     #back {
@@ -115,9 +136,9 @@
         background-color: var(--dark-scheme);
         color: var(--light-scheme);
     }
-    #scroll-indic {
+    /* #scroll-indic {
         background-image: var(--dark-grad);
-    }
+    } */
 }
 
 @media (min-height: 815px) {
@@ -189,11 +210,11 @@
     .social-box {
         margin-bottom: 30px !important;
     }
-    @media (max-height: 805px) { 
+    /* @media (max-height: 805px) { 
         #scroll-indic {
             visibility: visible !important;
         }
-    }
+    } */
 }
 @media (max-width: 550px) {
     h1 {
@@ -211,7 +232,7 @@
     }
     
 }
-
+/* 
 
 #scroll-indic {
     visibility: hidden;
@@ -244,7 +265,7 @@
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
+} */
 @keyframes float {
     0% {
         transform: translateY(-10px);
@@ -317,6 +338,7 @@ a {
 
 .social-box {
     /* width: fit-content; */
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -326,7 +348,7 @@ a {
     text-align: center;
 }
 .social-box a {
-    padding: 8px;
+    padding: 8px 8px 0px 8px;
 }
 .social-box p {
     opacity: 0;
@@ -396,7 +418,6 @@ a {
     transition: all 0.25s ease-in-out;
 }
   
-
 #bottom-of-page {
     /* position: absolute; */
     /* bottom: 0; */
