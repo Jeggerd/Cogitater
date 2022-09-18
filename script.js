@@ -78,41 +78,30 @@ function elementsOverlap(el1, el2) {
     );
   }
 
-  window.onscroll = function() {
-    const el1 = document.getElementById('scroll-indic');
-    const el2 = document.getElementById('credit');
+//   window.onscroll = function() {
+//     const el1 = document.getElementById('scroll-indic');
+//     const el2 = document.getElementById('credit');
 
-    if (elementsOverlap(el1, el2)) {
-        el1.style.opacity = 0;
-        // console.log("at bottom, should hide indic")
+//     if (elementsOverlap(el1, el2)) {
+//         el1.style.opacity = 0;
+//         // console.log("at bottom, should hide indic")
+//     } else {
+//         // setTimeout(function(){
+//             el1.style.opacity = 1;
+//         // }, 250);
+//     }
+//   }
+
+  window.onscroll = function() {
+    let indic = document.getElementById('scroll-indic');
+    var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+
+    if (scrollPos <= 25) {
+        indic.style.opacity = 1;
     } else {
-        // setTimeout(function(){
-            el1.style.opacity = 1;
-        // }, 250);
+        setTimeout(function(){
+            indic.style.opacity = 0;
+        }, 350)
     }
   }
   
-
-// window.onscroll = function() {
-
-//     var height = null
-//     if (!/android/i.test(navigator.userAgent) || navigator.platform.indexOf("Android")!=-1) {
-//         height = Math.round(document.querySelector("#bottom-of-page").getBoundingClientRect().bottom)
-//         document.querySelector(".diagdiv").innerHTML = "andrd  "
-//     } else {
-//         height = window.innerHeight
-//         document.querySelector(".diagdiv").innerHTML = "na  "
-//     }
-//   let rect = document.querySelector(".social-box").getBoundingClientRect();
-
-//   if ((rect.bottom - height) <= 0) {
-//     document.querySelector("#scroll-indic").style.opacity = 0;
-//     // console.log("At the bottom")
-//   } else {
-//         setTimeout(function(){
-//             document.querySelector("#scroll-indic").style.opacity = 1;
-//         }, 250);
-//     }
-
-//     document.querySelector(".diagdiv").innerHTML += "inner="+window.innerHeight+"; outer="+window.outerHeight+"; G="+height+"; doccli="+document.body.clientHeight+"; rectbot="+rect.bottom
-//   }
