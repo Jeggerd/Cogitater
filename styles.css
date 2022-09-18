@@ -91,7 +91,7 @@
     }
     .button-cluster p { border: 2pt solid var(--dark-scheme);}
     .button-cluster p,
-    .tooltip .tooltiptext, .star {
+    .star {
         background-color: var(--dark-scheme);
         color: var(--light-scheme);
     }
@@ -128,7 +128,7 @@
     }
     .button-cluster p { border: 2pt solid var(--light-scheme);}
     .button-cluster p,
-    .tooltip .tooltiptext, .star {
+    .star {
         background-color: var(--light-scheme);
         color: var(--dark-scheme);
     }
@@ -396,32 +396,4 @@ a {
 
 .subtitle {
     font-size: 60px;
-}
-
-.tooltip {
-    position: relative;
-}
-
-.tooltip .tooltiptext {
-    opacity: 0;
-    width: 120px;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    position: absolute;
-    z-index: 1;
-
-    left: 50%;
-    margin-left: -60px;
-
-    transition: all 0.25s ease-in-out;
-}
-  
-#bottom-of-page {
-    /* position: absolute; */
-    /* bottom: 0; */
-    width: 100%;
-    height: 10px;
-    background-color: transparent;
 }
