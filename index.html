@@ -32,12 +32,29 @@
         <link rel="stylesheet" href="./styles.css" />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:100,400,600' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+             $( window ).scroll(function() {
+                var scrollPos = $(window).scrollTop();
+                var indic = $('#scroll-indic')
+
+                if (scrollPos <= 25) {
+                    indic.css("opacity", "1")
+                } else {
+                    setTimeout(function(){
+                        indic.css("opacity", "0")
+                    }, 350)
+                }
+
+                $('#test').text(scrollPos)
+            })
+        </script>
     </head>
     <body>
         <div id="back"  class="unselectable"></div>
         <div id="scroll-indic" class="unselectable">
             <div style="display: block;">
-            <p>More Below</p>
+            <p>Scroll Down</p>
             <i class="fa-solid fa-chevron-down"></i>
             </div>
         </div>
@@ -48,7 +65,7 @@
                         <div id="logo-contain">
                             <div id="header-icon"></div>
                             <h1 class="unselectable" style="cursor:default;">
-                                Cogitater<br><span>Deep Thinkly</span>
+                                Cogitater<br><span id="test">Deep Thinkly</span>
                             </h1>
                         </div>
                         <h3 style="max-width:670px;">
