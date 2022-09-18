@@ -10,9 +10,22 @@ function copy(id) {
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
 
-    e.textContent = "Copied!"
-    e.style.opacity = 1;
-    setTimeout(function(){e.style.opacity = 0; setTimeout(function(){e.textContent = ""}, 250)}, 1250);
+    // e.textContent = "Copied!"
+    // e.style.opacity = 1;
+
+    var copy = document.querySelector('#copy-success')
+    var contact = document.querySelector('#contact-us')
+
+    copy.style.opacity = 1
+    contact.style.opacity = 0
+
+    setTimeout(function(){
+        copy.style.opacity = 0
+        contact.style.opacity = 1
+    }, 2000);
+
+    // document.querySelector('#credit')
+    // setTimeout(function(){e.style.opacity = 0; setTimeout(function(){e.textContent = ""}, 250)}, 1250);
 }
 
 window.onload = function generateStars(){
@@ -57,51 +70,6 @@ window.onload = function generateStars(){
 
         document.querySelector("#back").appendChild(aura)
     }
-
-    // let div = document.createElement("div");
-    // div.className = "diagdiv"
-    // div.style.color = "red"
-    // div.style.position = "fixed"
-    // document.body.appendChild(div)
 }
 
-
-function elementsOverlap(el1, el2) {
-    const domRect1 = el1.getBoundingClientRect();
-    const domRect2 = el2.getBoundingClientRect();
-  
-    return !(
-      domRect1.top > domRect2.bottom ||
-      domRect1.right < domRect2.left ||
-      domRect1.bottom < domRect2.top ||
-      domRect1.left > domRect2.right
-    );
-  }
-
-//   window.onscroll = function() {
-//     const el1 = document.getElementById('scroll-indic');
-//     const el2 = document.getElementById('credit');
-
-//     if (elementsOverlap(el1, el2)) {
-//         el1.style.opacity = 0;
-//         // console.log("at bottom, should hide indic")
-//     } else {
-//         // setTimeout(function(){
-//             el1.style.opacity = 1;
-//         // }, 250);
-//     }
-//   }
-
-  window.onscroll = function() {
-    let indic = document.getElementById('scroll-indic');
-    var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
-
-    if (scrollPos <= 25) {
-        indic.style.opacity = 1;
-    } else {
-        setTimeout(function(){
-            indic.style.opacity = 0;
-        }, 350)
-    }
-  }
   
