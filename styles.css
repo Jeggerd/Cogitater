@@ -170,6 +170,9 @@
 }
 
 @media (min-width: 710px) {
+    .social-box a {
+        padding: 8px 8px 0px 8px;
+    }
     .heading-container {
         width: 80%;
         margin: 10%;
@@ -209,6 +212,9 @@
     }
     .social-box {
         margin-bottom: 30px !important;
+    }
+    .social-box a {
+        padding: 8px;
     }
     /* @media (max-height: 805px) { 
         #scroll-indic {
@@ -347,9 +353,7 @@ a {
 
     text-align: center;
 }
-.social-box a {
-    padding: 8px 8px 0px 8px;
-}
+
 .social-box p {
     opacity: 0;
     font-size: 14px;
