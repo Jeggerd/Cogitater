@@ -11,6 +11,27 @@
     grid-template-areas: "inner-div";
 }
 
+.social-icon {
+    border-radius: 100%;
+    width: 55px;
+    height: 55px;
+    margin: 0 7px 0 7px;
+    background-color: gray;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#yt {
+    background-image: url("./assets/social/yt.png");
+    background-color: transparent;
+}
+#twitch {
+    background-image: url("./assets/social/twitch.jpg");
+}
+#instagram {
+    background-image: url("./assets/social/instagram.png");
+}
+
 #contact-container p {
     grid-area: inner-div;
     width: 100%;
@@ -31,6 +52,7 @@
     height: fit-content;
     opacity: 0.7;
     width: 100%;
+    background-color: transparent !important;
 }
 #credit a {
     text-decoration: underline;
@@ -40,12 +62,12 @@
     width: 100%;
     height: calc(100vh);
     position: fixed;
-
 }
 
 .star {
     position: absolute;
     transform: rotate(45deg);
+    background-color: white;
 }
 
 @media (pointer:coarse) {
@@ -56,7 +78,7 @@
     }
 }
 
-    @media (prefers-color-scheme:light) {
+@media (prefers-color-scheme:light) {
     .button-cluster p:hover{
         background-color: var(--dark-scheme) !important;
         color: var(--light-scheme) !important;
@@ -65,16 +87,20 @@
 }
 
 @media (prefers-color-scheme:light) {
-    #back {
+    /* #back {
         opacity: 0.6;
     }
     .aura {
         opacity: 0.025
+    } */
+    h3, p {
+        background-color: var(--light-scheme);
     }
-    :root {
+    
+    /* :root {
         --star-color-p: #9b3a64; 
         --star-color-b: #b19127; 
-    }
+    } */
     .fa-2x .fa-stack-1x {    
         color: var(--light-scheme) !important;
        
@@ -99,16 +125,20 @@
     }
 }
 @media (prefers-color-scheme:dark) {
-    #back {
+    /* #back {
         opacity: 0.7;
     }
     .aura {
         opacity: 0.015
+    } */
+    h1, h3, p {
+        background-color: var(--dark-scheme);
     }
-    :root {
+
+    /* :root {
         --star-color-p: #f1bfd3; 
         --star-color-b: #f1edc4; 
-    }
+    } */
     .fa-2x .fa-stack-1x {
         color: var(--dark-scheme) !important;
     }
@@ -117,6 +147,7 @@
     body {
         color: var(--light-scheme);
         background-color: var(--dark-scheme);
+        
     }
     .sep {
         border-color: var(--light-scheme);
@@ -241,7 +272,9 @@ body {
 h1 {
     font-weight: 600 !important;
     line-height: 120%;
-    margin-bottom: 0px;
+    margin: 0px;
+    width: fit-content;
+    
 }
 h2 {
     font-weight: 400;
@@ -252,6 +285,7 @@ h2 {
 h3 {
     font-weight: 400;
     line-height: 25px;
+
 }
 i {
     margin-right: 3px;
@@ -332,6 +366,16 @@ a {
 
 #logo-contain {
     padding: 20px 0 15px 0;
+    width: 100%;
+}
+
+#title-contain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .subtitle {
