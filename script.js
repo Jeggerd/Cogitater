@@ -8,6 +8,9 @@ function copy(id) {
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
 
+    // e.textContent = "Copied!"
+    // e.style.opacity = 1;
+
     var copy = document.querySelector('#copy-success')
     var contact = document.querySelector('#contact-us')
 
@@ -18,28 +21,31 @@ function copy(id) {
         copy.style.opacity = 0
         contact.style.opacity = 1
     }, 2000);
+
+    // document.querySelector('#credit')
+    // setTimeout(function(){e.style.opacity = 0; setTimeout(function(){e.textContent = ""}, 250)}, 1250);
 }
 
 var didmakestars = false
 window.onload = function generateStars(){
     if (!didmakestars) {
-        for (let i = 180; i--;) {
+        for (let i = 200; i--;) {
             let div = document.createElement("div");
-            let aura = document.createElement("div");
+            // let aura = document.createElement("div");
 
-            let bool = Math.random() < 0.25;
-            if (bool == true) {
-                let bool = Math.random() < 0.5;
-                if (bool == true) {
-                    div.style.backgroundColor = "var(--star-color-p)"
-                    aura.style.backgroundColor = "var(--star-color-p) !important"
-                } else {
-                    div.style.backgroundColor = "var(--star-color-b)"
-                    aura.style.backgroundColor = "var(--star-color-b) !important"
-                }
-            }
+            // let bool = Math.random() < 0.25;
+            // if (bool == true) {
+            //     let bool = Math.random() < 0.5;
+            //     if (bool == true) {
+            //         div.style.backgroundColor = "var(--star-color-p)"
+            //         // aura.style.backgroundColor = "var(--star-color-p) !important"
+            //     } else {
+            //         div.style.backgroundColor = "var(--star-color-b)"
+            //         // aura.style.backgroundColor = "var(--star-color-b) !important"
+            //     }
+            // }
 
-            var size = Math.random() * (2) + 2;
+            var size = Math.random()*(4-1) + 1;
             size = Math.round(size)
             let w = document.documentElement.clientWidth
             let h = document.documentElement.clientHeight
@@ -55,16 +61,18 @@ window.onload = function generateStars(){
 
             document.querySelector("#back").appendChild(div)
 
-            aura.classList     = "star aura";
-            aura.style.left    = (posx / w)*100 + '%'
-            aura.style.top     = (posy / h)*100 + '%'
-            aura.style.width   = size + 18 + "px"
-            aura.style.height  = size + 18 + "px"
-            aura.style.margin  = -10 + "px"
+            // aura.classList     = "star aura";
+            // aura.style.left    = (posx / w)*100 + '%'
+            // aura.style.top     = (posy / h)*100 + '%'
+            // aura.style.width   = size + 18 + "px"
+            // aura.style.height  = size + 18 + "px"
+            // aura.style.margin  = -10 + "px"
 
-            document.querySelector("#back").appendChild(aura)
+            // document.querySelector("#back").appendChild(aura)
         }
 
         didmakestars = true
     }
 }
+
+  
