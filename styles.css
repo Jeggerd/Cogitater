@@ -31,7 +31,7 @@
         height: 770px; 
     }
     #orbit {
-        margin: 70px 0;
+        margin: 50px 0;
     }
 }
 @media (max-width: 987px) {
@@ -41,7 +41,7 @@
         height: 770px; 
     }
     #orbit {
-        margin: 70px 0;
+        margin: 50px 0;
     }
 }
 @media (max-width: 665px) {
@@ -61,7 +61,7 @@
         width: 100vw;
         background-size: 120%;
         border-radius: 0 !important;
-        height: 716px; 
+        height: 740px; 
     }
     /* #desc {
         margin-left: 20px;
@@ -102,7 +102,7 @@
         -ms-transform: scale(0.8);
         -o-transform:scale(0.8);
         transform: scale(0.8);
-        margin: 20px 0;
+        margin: 0px 0;
     }
     .scicon {
         -webkit-transform: scale(1.1);
@@ -126,7 +126,7 @@
         -ms-transform: scale(0.7);
         -o-transform:scale(0.7);
         transform: scale(0.7);
-        margin: 0;
+        margin: -22px 0;
     }
 
     #blurry-back {
@@ -146,19 +146,16 @@
 body {
     margin: 0;
     overflow-x: hidden;
+    max-width: 100vw;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 300;
     text-align: center;
     font-size: 13pt;
     background-color: var(--back);
-    /* background-color: white; */
     color: white;
     height: 100vh;
-    width: 100vw;
     display: flex;
     justify-content: center;
-    /* margin-bottom: 20px; */
-
 }
 
 a {
@@ -179,7 +176,7 @@ h1 {
     font-size: 42pt;
     font-weight: 600;
     font-family: 'Quicksand';
-    margin: 0px;
+    margin: 15px 0px 0px 0px;
 }
 
 h2 {
@@ -278,7 +275,7 @@ a:hover {
 
 #stars {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top:0;
     left: 0;
@@ -288,12 +285,14 @@ a:hover {
     position: fixed;
     border-radius: 100%;
     background-color: white;
+    transition: all 0.25s linear;
 }
 
 #credit {
     opacity: 0.45;
     font-size: 10pt;
     margin-bottom: 14px;
+    height: 50px;
 }
 
 #credit a {
@@ -306,17 +305,30 @@ a:hover {
 
 #orbit {
     width: 100%;
-    height: 400px;
+    height: 410px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    /* overflow: hidden !important; */
+    /* border-radius: 100%; */
 }
 .ring {
     border: 2px solid rgb(179, 142, 255);
+    background-color: transparent;
     border-radius: 100%;
     position: absolute;
 }
+.ringmask {
+    /* border-radius: 100%; */
+    width: 410px;
+    height: 410px;
+    padding: 40px;
+    overflow: hidden;
+    position: absolute;
+    /* overflow-x:  hidden !important;
+    overflow-y: visible !important; */
+}
+
 
 .r1 {
     width: 410px;
