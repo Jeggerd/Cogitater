@@ -67,7 +67,7 @@ function generateStars(){
         for (let i = 40; i--;) {
             let div = document.createElement("div");
 
-            var size = Math.random()*(5-1.5) + 1.5;
+            var size = Math.random()*(3.5-1.5) + 1.5;
             size = Math.round(size)
             let w = document.documentElement.clientWidth
             let h = document.documentElement.clientHeight
