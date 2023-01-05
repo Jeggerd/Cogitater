@@ -26,26 +26,26 @@ function copy(id) {
     // setTimeout(function(){e.style.opacity = 0; setTimeout(function(){e.textContent = ""}, 250)}, 1250);
 }
 
+function pauseAnim(e) {
+    e.parentElement.style.animationPlayState = 'paused'
+    for (let i = 0; i < e.parentElement.children.length; i++) {
+        e.parentElement.children[i].style.animationPlayState = 'paused'
+    }
+}
+function resumeAnim(e) {
+    e.parentElement.style.animationPlayState = 'running'
+    for (let i = 0; i < e.parentElement.children.length; i++) {
+        e.parentElement.children[i].style.animationPlayState = 'running'
+    }
+}
+
 var didmakestars = false
-window.onload = function generateStars(){
+function generateStars(){
     if (!didmakestars) {
-        for (let i = 200; i--;) {
+        for (let i = 245; i--;) {
             let div = document.createElement("div");
-            // let aura = document.createElement("div");
 
-            // let bool = Math.random() < 0.25;
-            // if (bool == true) {
-            //     let bool = Math.random() < 0.5;
-            //     if (bool == true) {
-            //         div.style.backgroundColor = "var(--star-color-p)"
-            //         // aura.style.backgroundColor = "var(--star-color-p) !important"
-            //     } else {
-            //         div.style.backgroundColor = "var(--star-color-b)"
-            //         // aura.style.backgroundColor = "var(--star-color-b) !important"
-            //     }
-            // }
-
-            var size = Math.random()*(4-1) + 1;
+            var size = Math.random()*(3-0.5) + 0.5;
             size = Math.round(size)
             let w = document.documentElement.clientWidth
             let h = document.documentElement.clientHeight
@@ -59,20 +59,32 @@ window.onload = function generateStars(){
             div.style.width  = size + "px"
             div.style.height = size + "px"
 
-            document.querySelector("#back").appendChild(div)
+            document.querySelector("#stars").appendChild(div)
+        }
 
-            // aura.classList     = "star aura";
-            // aura.style.left    = (posx / w)*100 + '%'
-            // aura.style.top     = (posy / h)*100 + '%'
-            // aura.style.width   = size + 18 + "px"
-            // aura.style.height  = size + 18 + "px"
-            // aura.style.margin  = -10 + "px"
+        for (let i = 40; i--;) {
+            let div = document.createElement("div");
 
-            // document.querySelector("#back").appendChild(aura)
+            var size = Math.random()*(5-1.5) + 1.5;
+            size = Math.round(size)
+            let w = document.documentElement.clientWidth
+            let h = document.documentElement.clientHeight
+
+            let posx = (Math.random() * (w-4));
+            let posy = (Math.random() * (h-4));
+
+            div.className    = "star";
+            div.style.left   = (posx / w)*100 + '%'
+            div.style.top    = (posy / h)*100 + '%'
+            div.style.width  = size + "px"
+            div.style.height = size + "px"
+
+            document.querySelector("#blurry-back").appendChild(div)
         }
 
         didmakestars = true
     }
 }
 
-  
+
+window.onload = generateStars;
