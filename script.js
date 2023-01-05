@@ -27,9 +27,11 @@ function copy(id) {
 }
 
 function pauseAnim(e) {
-    e.parentElement.style.animationPlayState = 'paused'
-    for (let i = 0; i < e.parentElement.children.length; i++) {
-        e.parentElement.children[i].style.animationPlayState = 'paused'
+    if (navigator.userAgent.match(/iPad|iPhone|Android/i) == null) { 
+        e.parentElement.style.animationPlayState = 'paused'
+        for (let i = 0; i < e.parentElement.children.length; i++) {
+            e.parentElement.children[i].style.animationPlayState = 'paused'
+        }
     }
 }
 function resumeAnim(e) {
