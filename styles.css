@@ -31,7 +31,7 @@
         height: 770px; 
     }
     #orbit {
-        margin: 50px 0;
+        margin: 60px 0;
     }
 }
 @media (max-width: 987px) {
@@ -41,14 +41,14 @@
         height: 770px; 
     }
     #orbit {
-        margin: 50px 0;
+        margin: 60px 0;
     }
 }
 @media (max-width: 665px) {
     #blurry-back {
         width: 100vw;
         background-size: 105%;
-       
+       /* height: 700px;  */
     }
     #desc {
         margin-left: 30px;
@@ -66,9 +66,9 @@
     /* #desc {
         margin-left: 20px;
     } */
-    #orbit {
+    /* #orbit {
         margin: 50px 0;
-    }
+    } */
 }
 @media (max-width: 500px) {
     #button-cluster {
@@ -289,7 +289,7 @@ a:hover {
 }
 
 #credit {
-    opacity: 0.45;
+    opacity: 0.25;
     font-size: 10pt;
     margin-bottom: 14px;
     height: 50px;
@@ -420,15 +420,16 @@ a:hover {
 .likee {
     background-image: url("./assets/likee_.png");
     background-repeat: no-repeat;
-    background-size: 85%;
+    background-size: contain;
     background-position: center;
 }
 
 .insta {
-    background-image: url("./assets/insta.png");
+    background-image: url("./assets/instawh.png");
     background-repeat: no-repeat;
-    background-size: 55%;
+    background-size: contain;
     background-position: center;
+    /* background-color: white; */
 }
 
 #copy-success {
