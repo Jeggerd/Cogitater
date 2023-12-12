@@ -44,7 +44,7 @@ function resumeAnim(e) {
 var didmakestars = false
 function generateStars(){
     if (!didmakestars) {
-        for (let i = 245; i--;) {
+        for (let i = 350; i--;) {
             let div = document.createElement("div");
 
             var size = Math.random()*(3-0.5) + 0.5;
