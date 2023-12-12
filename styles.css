@@ -417,8 +417,15 @@ a:hover {
     }
 }
 
-.likee {
-    background-image: url("./assets/likee_.png");
+.tiktok {
+    background-image: url("./assets/tiktok.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.twitter {
+    background-image: url("./assets/x.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
