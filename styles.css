@@ -238,16 +238,39 @@ a:hover {
     padding: 20px 0;
 }
 
+#app-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
 #button-cluster p {
     margin: 0 5px;
     padding: 16px 18px;
     width: 190px;
     border-radius: 50px;
-    background-color: rgb(21, 21, 58);
+    background-color: rgb(40, 25, 72);
+}
+
+#app-button div {
+    margin: 0 5px;
+    padding: 4px 18px;
+    width: 180px;
+    border-radius: 12px;
+    background-color: rgb(179, 98, 255);
+    font-weight: bold;
+}
+
+#app-button p {
+    background-color: transparent;
 }
 
 #button-cluster a {
-    color: rgb(179, 98, 255);
+    color: rgb(194, 130, 255);
+}
+
+#app-button a {
+    color: white;
 }
 
 #blurry-back {
